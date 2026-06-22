@@ -104,7 +104,12 @@ while True:
             if len(coleccion) == 0:
                 print("Error, no hay estudiantes ingresados.")
             else:
-                nombre = input("Ingrese el nombre del estudiante a buscar: ")
+                while True:
+                    nombre = input("Ingrese el nombre del estudiante: ")
+                    if validar_nombre(nombre):
+                        break
+                    else:
+                        print("Error, el nombre no puede estar vacío ni ser sólo espacios en blanco.")
                 posicion = buscar_indice(coleccion, nombre)
                 if posicion == -1:
                     print(f"Error, estudiante {nombre} no encontrado.")
@@ -124,7 +129,12 @@ while True:
             if len(coleccion) == 0:
                 print("Error, no hay estudiantes ingresados.")
             else:
-                nombre = input("Ingrese el nombre del estudiante a eliminar de la lista: ")
+                while True:
+                    nombre = input("Ingrese el nombre del estudiante: ")
+                    if validar_nombre(nombre):
+                        break
+                    else:
+                        print("Error, el nombre no puede estar vacío ni ser sólo espacios en blanco.")
                 posicion = buscar_indice(coleccion, nombre)
                 if posicion == -1:
                     print(f"Error, estudiante {nombre} no encontrado.")
