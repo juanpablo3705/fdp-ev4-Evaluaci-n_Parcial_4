@@ -109,10 +109,17 @@ while True:
                 if posicion == -1:
                     print(f"Error, estudiante {nombre} no encontrado.")
                 else:
+                    actualizar_estados(coleccion)
+                    estudiante = coleccion[posicion]
+                    if estudiante["aprobado"]:
+                        estado = "APROBADO"
+                    else:
+                        estado = "REPROBADO"
                     print("¡Estudiante encontrado!")
                     print(f"Nombre: {nombre}.")
                     print(f"Edad: {coleccion[posicion]['edad']}.")
                     print(f"Nota: {coleccion[posicion]['nota']}")
+                    print(f"Estado: {estado}.")
         case 3:
             if len(coleccion) == 0:
                 print("Error, no hay estudiantes ingresados.")
